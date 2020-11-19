@@ -34,7 +34,6 @@ const DATA_KEY = 'bs.modal'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
 const ESCAPE_KEY = 'Escape'
-const isLTR = !isRTL
 
 const Default = {
   backdrop: true,
@@ -445,11 +444,11 @@ class Modal {
     const isModalOverflowing =
       this._element.scrollHeight > document.documentElement.clientHeight
 
-    if ((!this._isBodyOverflowing && isModalOverflowing && isLTR) || (this._isBodyOverflowing && !isModalOverflowing && isRTL)) {
+    if ((!this._isBodyOverflowing && isModalOverflowing && !isRTL) || (this._isBodyOverflowing && !isModalOverflowing && isRTL)) {
       this._element.style.paddingLeft = `${this._scrollbarWidth}px`
     }
 
-    if ((this._isBodyOverflowing && !isModalOverflowing && isLTR) || (!this._isBodyOverflowing && isModalOverflowing && isRTL)) {
+    if ((this._isBodyOverflowing && !isModalOverflowing && !isRTL) || (!this._isBodyOverflowing && isModalOverflowing && isRTL)) {
       this._element.style.paddingRight = `${this._scrollbarWidth}px`
     }
   }
