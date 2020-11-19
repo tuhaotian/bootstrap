@@ -54,9 +54,9 @@ const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY}${DATA_API_KEY}`
 const CLASS_NAME_DISABLED = 'disabled'
 const CLASS_NAME_SHOW = 'show'
 const CLASS_NAME_DROPUP = 'dropup'
-const CLASS_NAME_DROPRIGHT = 'dropend'
-const CLASS_NAME_DROPLEFT = 'dropstart'
-const CLASS_NAME_MENURIGHT = 'dropdown-menu-end'
+const CLASS_NAME_DROPEND = 'dropend'
+const CLASS_NAME_DROPSTART = 'dropstart'
+const CLASS_NAME_MENUEND = 'dropdown-menu-end'
 const CLASS_NAME_NAVBAR = 'navbar'
 const CLASS_NAME_POSITION_STATIC = 'position-static'
 
@@ -279,14 +279,14 @@ class Dropdown {
 
     // Handle dropup
     if (parentDropdown.classList.contains(CLASS_NAME_DROPUP)) {
-      placement = this._menu.classList.contains(CLASS_NAME_MENURIGHT) ?
+      placement = this._menu.classList.contains(CLASS_NAME_MENUEND) ?
         PLACEMENT_TOPEND :
         PLACEMENT_TOP
-    } else if (parentDropdown.classList.contains(CLASS_NAME_DROPRIGHT)) {
+    } else if (parentDropdown.classList.contains(CLASS_NAME_DROPEND)) {
       placement = PLACEMENT_RIGHT
-    } else if (parentDropdown.classList.contains(CLASS_NAME_DROPLEFT)) {
+    } else if (parentDropdown.classList.contains(CLASS_NAME_DROPSTART)) {
       placement = PLACEMENT_LEFT
-    } else if (this._menu.classList.contains(CLASS_NAME_MENURIGHT)) {
+    } else if (this._menu.classList.contains(CLASS_NAME_MENUEND)) {
       placement = PLACEMENT_BOTTOMEND
     }
 
